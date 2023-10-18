@@ -1,0 +1,18 @@
+###
+GET http://localhost:8080/add?a=1&b=2
+
+> {%
+    expected = 200;
+    client.test("Must be 200",function(){
+        client.assert(response.status==expected, "Response status is not "+expected)
+    });
+%}
+
+###
+GET http://localhost:8080/add?a=0&b=2
+
+###
+GET http://localhost:8080/add?b=2
+
+###
+GET http://localhost:8080/add
